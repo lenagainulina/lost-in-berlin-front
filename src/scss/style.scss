@@ -1,0 +1,62 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+
+$cl-primary-white: #ffffff;
+$cl-primary-black: #0c0c0c;
+$cl-text: #d6d6d6;
+$cl-text-highligh: #d62f2f;
+
+body {
+  background: linear-gradient(to left,#000428 ,#004e92);
+  color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: #f8f8f8;
+  font-family: helvetica;
+}
+
+.business-item {
+  @include make-row();
+
+  margin: 5px 0;
+  color: $cl-text;
+
+  &__photo {
+    @include make-xs-column(1);
+  }
+
+  &__fname {
+    @include make-xs-column(1);
+  }
+
+  &__lname {
+    @include make-xs-column(1);
+    
+  }
+
+  &__service-location {
+    @include make-xs-column(1);
+  }
+
+  &__description {
+    @include make-xs-column(2);
+  }
+
+  &__select-button{
+    @include make-xs-column(1);
+    & > button {
+      @include button-variant($color: #fbf1f1, $background: #e60000, $border:#e60000);
+    }
+    &__deselect-button{
+      @include make-xs-column(1);
+      & > button {
+        @include button-variant($color: #fbf1f1, $background: #e60000, $border:#e60000);
+      }
+    }
+  }
+}
