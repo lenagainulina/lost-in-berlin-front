@@ -7,6 +7,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.get('/api/businesses', function(req, res){
+      req.query
               fetch('http://localhost:8080/businesses?location=berlin', {
                   method: 'get'
               }).then(function(response) {
