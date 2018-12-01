@@ -3,22 +3,32 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
-
 app.use(bodyParser.json())
 
 app.get('/api/businesses', function(req, res){
-              fetch('http://localhost:8080/businesses?location=berlin', {
-                  method: 'get'
-              }).then(function(response) {
-            
-                  response.json().then(actualData => {
-                      res.send(actualData);
-                  }).catch(jsonParsingError => {
-                      res.send(jsonParsingError);    
-                  })
-              }).catch(function(error) {
-                  res.send(error);
-              })
+    res.send([
+        {
+            "description": "Hi, I'm Ada, the dog.",
+            "serviceLocation": "Berlin",
+            "photo": null,
+            "lname": "Polkanova",
+            "fname": "Ada"
+        },
+        {
+            "description": "Hi, I'm Sergey, the guide.",
+            "serviceLocation": "Berlin",
+            "photo": null,
+            "lname": "Lukichev",
+            "fname": "Sergey"
+        },
+        {
+            "description": "Hi, I'm Lena, the guide.",
+            "serviceLocation": "Berlin",
+            "photo": null,
+            "lname": "Gainulina",
+            "fname": "Lena"
+        }
+     ])
 })
 
 app.listen(9000)

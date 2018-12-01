@@ -37,6 +37,7 @@ class BusinessList extends React.Component {
 }
 
 const mapStateToProps = function (state) {
+    debugger;
     return {
         selectedBusiness: state.selectedBusiness,
         businesses: state.businessList
@@ -44,6 +45,7 @@ const mapStateToProps = function (state) {
 }
 
 const mapDispatchToProps = function (dispatch) {
+    debugger;
     return {
         selectBusinessAction: (business) => {
             return dispatch(BusinessActions.selectBusiness(business))

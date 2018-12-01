@@ -7,10 +7,9 @@ const initialState = {
   }
   
   export default function businessReducer(state = initialState, action) {
-
-
-
     switch (action.type) {
+      case "REGISTER_BUSINESS": 
+        //
       case "SELECT_CURRENT_BUSINESS":
       debugger;
         return Object.assign({}, state, {
