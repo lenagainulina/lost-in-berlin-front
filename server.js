@@ -7,9 +7,13 @@ const app = express()
 app.use(bodyParser.json())
 
 app.get('/api/businesses', function(req, res){
-      req.query
-              fetch('http://localhost:8080/businesses?location=berlin', {
+    console.log("server "+req.query.location);
+        if (req.query.location == undefined){
+            res.send("[]")
+        }else{
+      fetch(`http://localhost:8080/businesses?location=${req.query.location}`, {
                   method: 'get'
+                  
               }).then(function(response) {
             
                   response.json().then(actualData => {
@@ -20,6 +24,8 @@ app.get('/api/businesses', function(req, res){
               }).catch(function(error) {
                   res.send(error);
               })
+            }              
 })
+
 
 app.listen(9000)

@@ -3,13 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store-config';
-import createRouter from 'router5';
-//import { reduxPlugin } from 'redux-router5';
-
+import { stringify } from 'query-string';
 
 import Home from './components/Home';
-
-//router.usePlugin(reduxPlugin(store.dispatch));
 
 const renderApplication = () => {
   ReactDOM.render(

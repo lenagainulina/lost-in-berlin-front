@@ -1,8 +1,8 @@
 const initialState = {
     selectedBusiness: null,
-    BusinessList: [],
-    ChosenBusinessList: [],
-    //lectionItem: null,
+    businessList: [],
+    location: "",
+    chosenBusinessList: [],
     isPending: false
   }
   
@@ -11,15 +11,17 @@ const initialState = {
 
 
     switch (action.type) {
-      case "SELECT_CURRENT_BUSINESS":
-      debugger;
+      case "CHANGE_LOCATION": 
         return Object.assign({}, state, {
-          selectedBusiness: [...state.ChosenBusinessList, action.business]
+        location: action.location
+      })
+      case "SELECT_BUSINESS":
+        return Object.assign({}, state, {
+          chosenBusinessList: [...state.chosenBusinessList, action.business]
         })
-        case "DESELECT_CURRENT_BUSINESS":
-      debugger;
+        case "DESELECT_BUSINESS":
         return Object.assign({}, state, {
-          selectedBusiness: state.ChosenBusinessList.pop(action.business)
+          chosenBusinessList: state.chosenBusinessList.filter( it => it != action.business)
         })
       case "FETCH_BUSINESS_LIST":
       
