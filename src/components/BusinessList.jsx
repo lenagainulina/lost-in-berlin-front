@@ -39,8 +39,7 @@ class BusinessList extends React.Component {
 
 
     render() {
-        const chosenBusinessList = this.props.chosenBusinessList ? this.props.chosenBusinessList : [];
-        console.log("BL %o", this.props)       
+        const chosenBusinessList = this.props.chosenBusinessList ? this.props.chosenBusinessList : [];    
         return (
             <div>
                 <h1>Choose your guide {chosenBusinessList.business}</h1>
@@ -51,8 +50,7 @@ class BusinessList extends React.Component {
                     this.handleBusinessSelection.bind(this),
                     this.handleBusinessDeselection.bind(this)
                 )}
-
-            
+    
             </div>
         );
     }
