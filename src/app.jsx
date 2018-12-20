@@ -14,12 +14,8 @@ const renderApplication = () => {
     </Provider>,
     document.querySelector('#root')
   );
-}
+};
 
 renderApplication(Home);
 
-if (module.hot) {
-  module.hot.accept("./components/Home", () => {
-    renderApplication();
-  });
-}
+if (module.hot) module.hot.accept("./components/Home", () => renderApplication());
