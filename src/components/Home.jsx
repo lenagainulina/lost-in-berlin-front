@@ -4,7 +4,7 @@ import BusinessList from './BusinessList';
 const Home = () => {
   return (
     <div>
-      <BusinessList items={[]} />
+      <BusinessList/>
     </div>
   )
 }

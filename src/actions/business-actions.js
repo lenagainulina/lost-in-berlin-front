@@ -43,15 +43,10 @@ function fetchBusinessListFailure(error) {
 function fetchBusinessListAsync(locationStr) {
 
     return function (dispatch) {
-        console.log("Acttions " + locationStr);
         dispatch(fetchBusinessList())
         if (locationStr == "") {
-            console.log("We are here")
-            //           locationStr = "berlin"
             dispatch(fetchBusinessListSuccess([]));
         } else {
-            console.log("We are here1")
-            // fetch('api/businesses', {
             fetch(`/api/businesses?location=${locationStr}`, {
                 method: 'get'
             }).then(function (response) {
@@ -62,12 +57,10 @@ function fetchBusinessListAsync(locationStr) {
                     dispatch(fetchBusinessListFailure(jsonParsingError));
                 })
             }).catch(function (error) {
-                debugger;
                 dispatch(fetchBusinessListFailure(error));
             })
         }
     }
-
 }
 
 export default {

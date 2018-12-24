@@ -10,9 +10,8 @@ app.get('/api/businesses', function (req, res) {
 
     fetch(`http://localhost:8080/businesses?location=${req.query.location}`, {
         method: 'get'
-
     }).then(function (response) {
-
+        console.log('Request URL:', req.originalUrl)
         response.json().then(actualData => {
             res.send(actualData);
         }).catch(jsonParsingError => {
@@ -22,6 +21,5 @@ app.get('/api/businesses', function (req, res) {
         res.send(error);
     })
 })
-
 
 app.listen(9000)
