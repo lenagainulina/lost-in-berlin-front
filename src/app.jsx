@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store-config';
-
+import { stringify } from 'query-string';
 
 import Home from './components/Home';
 
