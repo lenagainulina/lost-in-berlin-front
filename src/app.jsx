@@ -4,22 +4,36 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store-config';
 import { stringify } from 'query-string';
+import { RouterProvider } from 'react-router5'
 
-import Home from './components/Home';
+import createStoreConfig from './store-config';
+import createRouter from './create-router';
+
+import Root from './components/Root';
+
+const router = createRouter();
+const store = createStoreConfig(router);
 
 const renderApplication = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <Home />
+      <RouterProvider router={router}>
+        <Root />
+      </RouterProvider>
     </Provider>,
     document.querySelector('#root')
   );
 }
 
-renderApplication(Home);
+router.start((err, state) => {
+  debugger;
+  renderApplication(Root);
+})
 
 if (module.hot) {
-  module.hot.accept("./components/Home", () => {
-    renderApplication();
+  module.hot.accept("./components/Root", () => {
+    router.start((err, state) => {
+      renderApplication();
+    })
   });
 }
