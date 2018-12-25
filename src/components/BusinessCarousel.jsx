@@ -1,9 +1,34 @@
-import React from "react";
+import React from 'react';
+import Slider from 'react-slick';
+import BusinessCard from './BusinessCard';
 
 class BusinessCarousel extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {businessData : [
+                {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+                 "name": "Burgundy Flemming",
+                 "description": "Schloss Scharlottenburg"
+                },
+                {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample119.jpg",
+                    "name": "Migel Huan Sanchos",
+                    "description": "Spanish embassy"
+                },
+                {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample120.jpg",
+                    "name": "Antoine de Saint-Exupery",
+                    "description": "Charming moon and small boy"
+                },
+                {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample121.jpg",
+                    "name": "Karl Marks",
+                    "description": "Ostbahnhof als Kapitalanlage"
+                },
+
+            ]}
+    }
+
     render(){
-        const numOfBusinesses = this.props.businessData.length || 0;
+        const numOfBusinesses = this.state.businessData.length || 0;
 
         const settings = {
             dots: true,
@@ -14,8 +39,8 @@ class BusinessCarousel extends React.Component{
 
         let BusinessCards =
             (numOfBusinesses>0)
-                ? this.props.businessData.map((itm, ind) => ( <div key = {ind}> <BusinessCard data = {itm}/> </div> ))
-                : (<p>No businesses found.</p>);
+                ? this.state.businessData.map((itm, ind) => ( <div key = {ind}> <BusinessCard data = {itm}/> </div> ))
+                : (<p>No businesses were found.</p>);
 
 
         return (
@@ -26,3 +51,5 @@ class BusinessCarousel extends React.Component{
         )
     }
 }
+
+export default BusinessCarousel;

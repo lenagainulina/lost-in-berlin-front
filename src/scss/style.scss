@@ -2,6 +2,7 @@
 @import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
 @import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
 @import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+@import "businessCarousel";
 
 $cl-primary-white: #ffffff;
 $cl-primary-black: #0c0c0c;
@@ -9,10 +10,15 @@ $cl-text: #d6d6d6;
 $cl-text-highligh: #d62f2f;
 
 body {
+  /*
   background: linear-gradient(to left,#000428 ,#004e92);
   color: #f8f8f8;
   display: flex;
   justify-content: center;
+*/
+  background-color: #212121;
+  text-align: center;
+  color: white;
 }
 
 h1 {

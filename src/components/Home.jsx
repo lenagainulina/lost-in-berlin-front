@@ -1,10 +1,11 @@
 import React from 'react';
-import BusinessList from './BusinessList';
+import BusinessCarousel from './BusinessCarousel';
 
 const Home = () =>
 (
-    <div>
-          <BusinessList items={[]} />
+    <div id="home">
+        <p> Home</p>
+          <BusinessCarousel/>
     </div>
 );
 

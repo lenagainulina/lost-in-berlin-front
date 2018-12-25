@@ -12,7 +12,7 @@ const renderApplication = () => {
     <Provider store={store}>
       <Home />
     </Provider>,
-    document.querySelector('#root')
+    document.getElementById('root')
   );
 };
 

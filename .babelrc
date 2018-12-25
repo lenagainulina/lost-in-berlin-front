@@ -1,13 +1,1 @@
-{
-  "presets": [
-    ["env", { 
-      "targets": {
-        "browsers": "last 2 versions"
-      },
-      "loose": true,
-      "modules": false
-    }],
-    "react",
-    "react-hmre"
-  ]
-}
+{"presets": ["@babel/env", "@babel/react"]}
