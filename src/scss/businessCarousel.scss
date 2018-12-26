@@ -1,4 +1,6 @@
-  @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css);
 .businessCard {
   font-family: 'Monospace', sans-serif;
   position: relative;
@@ -80,21 +82,26 @@
   right: 0;
   z-index: 1;
 }
+.businessCard:hover:before,
 .businessCard.hover:before {
   top: 10px;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 .businessCard:hover h3,
-.businessCard.hover h5 {
+.businessCard.hover h3,
+.businessCard:hover h5,
+.businessCard.hover h5{
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
 }
+.businessCard:hover h3,
 .businessCard.hover h3 {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
+.businessCard:hover h5,
 .businessCard.hover h5 {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
@@ -110,6 +117,6 @@ body {
 .home{
   width: 1200px;
   margin: auto;
-  font-family: 'Raleway';
+  font-family: 'Raleway', serif;
   font-size: 24px;
 }

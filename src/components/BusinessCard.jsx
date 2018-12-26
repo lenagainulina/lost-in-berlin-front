@@ -1,14 +1,11 @@
 import React from "react";
 
-export default props =>{
-    console.log("PROPS: %o", props);
-    return (
+export default props =>(
         <figure className= "businessCard">
             <img src={props.data.imageUrl} alt="Profile picture"/>
             <figcaption>
-                <h1>{props.data.name}</h1>
-                <h2>{props.data.description}</h2>
+                <h3>{props.data.name}</h3>
+                <h5>{props.data.description}</h5>
             </figcaption>
         </figure>
     );
-}

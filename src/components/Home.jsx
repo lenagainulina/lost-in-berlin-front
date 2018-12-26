@@ -3,7 +3,7 @@ import BusinessCarousel from './BusinessCarousel';
 
 const Home = () =>
 (
-    <div id="home">
+    <div className="home">
         <p> Home</p>
           <BusinessCarousel/>
     </div>

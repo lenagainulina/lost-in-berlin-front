@@ -17,7 +17,7 @@ class BusinessCarousel extends React.Component{
                 },
                 {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample120.jpg",
                     "name": "Antoine de Saint-Exupery",
-                    "description": "Charming moon and small boy"
+                    "description": "Charming moon and poor small boy"
                 },
                 {"imageUrl":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample121.jpg",
                     "name": "Karl Marks",
@@ -39,7 +39,7 @@ class BusinessCarousel extends React.Component{
 
         let BusinessCards =
             (numOfBusinesses>0)
-                ? this.state.businessData.map((itm, ind) => ( <div key = {ind}> <BusinessCard data = {itm}/> </div> ))
+                ? this.state.businessData.map((itm, ind) => (<BusinessCard data = {itm}/>))
                 : (<p>No businesses were found.</p>);
 
 

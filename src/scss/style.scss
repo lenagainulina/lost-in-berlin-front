@@ -10,20 +10,17 @@ $cl-text: #d6d6d6;
 $cl-text-highligh: #d62f2f;
 
 body {
-  /*
+
   background: linear-gradient(to left,#000428 ,#004e92);
   color: #f8f8f8;
   display: flex;
   justify-content: center;
-*/
-  background-color: #212121;
   text-align: center;
-  color: white;
 }
 
 h1 {
   color: #f8f8f8;
-  font-family: helvetica;
+  font-family: helvetica, serif;
 }
 
 .business-item {
