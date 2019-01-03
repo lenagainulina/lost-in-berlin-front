@@ -1,112 +1,174 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css);
+
 .businessCard {
-  font-family: 'Monospace', sans-serif;
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin: 10px;
-  min-width: 230px;
-  max-width: 315px;
-  width: 100%;
+
+  margin: 1em;
+  height: 30em;
+  width: 20em; // 100%;
+
+  font-family: 'Monospace', sans-serif;
   color: #ffffff;
   font-size: 16px;
   text-align: left;
+
+  background: url("/src/resources/img/bg_profile.jpeg");
+  border: #0c0c0c solid 1px;
 }
-.businessCard * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-.businessCard:before {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  top: 100%;
-  content: '';
-  background-color: rgba(51, 51, 51, 0.9);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-transition-delay: 0.25s;
-  transition-delay: 0.25s;
-}
+
 .businessCard img {
   vertical-align: top;
   max-width: 100%;
   backface-visibility: hidden;
 }
-.businessCard figcaption {
+
+.businessProfile{
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  bottom: .5em;
+  left: .5em;
+  right: .5em;
+  height: 2em;
+
+  background-color: rgba(49, 112, 143, 0.75);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+
 }
+
+.businessProfile:hover{
+  height: 29em;
+}
+
 .businessCard h3,
 .businessCard h5 {
-  margin: 0;
-  opacity: 0;
+  margin: 0.5em;
   letter-spacing: 1px;
 }
-.businessCard h3 {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  text-transform: uppercase;
-  font-weight: 400;
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
-  margin-bottom: 5px;
+
+.businessCard h3{
+  text-align: center;
+  margin-bottom: 1em;
 }
-.businessCard h5 {
-  font-weight: normal;
-  background-color: #ae895d;
-  padding: 3px 10px;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.businessCard a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-.businessCard:hover:before,
-.businessCard.hover:before {
-  top: 10px;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-.businessCard:hover h3,
-.businessCard.hover h3,
-.businessCard:hover h5,
-.businessCard.hover h5{
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1;
-}
-.businessCard:hover h3,
-.businessCard.hover h3 {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-.businessCard:hover h5,
-.businessCard.hover h5 {
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
-}
-/* Demo purposes only */
+  /*
+
+  .businessCard {
+    font-family: 'Monospace', sans-serif;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 1em;
+  /*
+    min-width: 230px;
+    max-width: 315px;
+    min-height: 460px;
+    max-height: 630px;
+  //
+    height: 30em;
+    width: 20em; // 100%;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+
+    border: #0c0c0c solid 1px;
+  }
+  .businessCard:before {
+    position: absolute;
+    bottom: .5em;
+    left: .5em;
+    right: .5em;
+    height: 2em;
+    content: '';
+    background-color: rgba(148, 148, 148, 0.75);
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+  .businessCard:hover:before,
+  .businessCard.hover:before {
+    height: 29em;
+  //  top: .5em;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+
+  .businessCard * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+  .businessCard figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .businessCard h4{
+    position: absolute;
+    bottom: 0;
+
+  }
+
+  .businessCard h3 {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    margin-bottom: 5px;
+  }
+  .businessCard h5 {
+    font-weight: normal;
+    background-color: #ae895d;
+    padding: 3px 10px;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .businessCard a {
+    position: absolute;
+    top: 0  ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .businessCard:hover h3,
+  .businessCard.hover h3,
+  .businessCard:hover h5,
+  .businessCard.hover h5{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .businessCard:hover h3,
+  .businessCard.hover h3 {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  .businessCard:hover h5,
+  .businessCard.hover h5 {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  /* Demo purposes only */
 /*
 body {
   background-color: #212121;
