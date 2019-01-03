@@ -39,7 +39,7 @@ class BusinessCarousel extends React.Component{
 
         let BusinessCards =
             (numOfBusinesses>0)
-                ? this.state.businessData.map((itm, ind) => (<BusinessCard data = {itm}/>))
+                ? this.state.businessData.map((itm, ind) => (<BusinessCard key = {"card-"+ind} data = {itm}/>))
                 : (<p>No businesses were found.</p>);
 
 
