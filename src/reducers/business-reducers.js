@@ -1,39 +1,21 @@
 const initialState = {
-    selectedBusiness: null,
-    BusinessList: [],
-    ChosenBusinessList: [],
-    //lectionItem: null,
-    isPending: false
-  }
+  businessList:[],
+  selectedBusinessIdsList:[],
+  isPending: false
+};
   
-  export default function businessReducer(state = initialState, action) {
+export default (state = initialState, action) => {
 
-
-
-    switch (action.type) {
-      case "SELECT_CURRENT_BUSINESS":
-      debugger;
-        return Object.assign({}, state, {
-          selectedBusiness: [...state.ChosenBusinessList, action.business]
-        })
-        case "DESELECT_CURRENT_BUSINESS":
-      debugger;
-        return Object.assign({}, state, {
-          selectedBusiness: state.ChosenBusinessList.pop(action.business)
-        })
-      case "FETCH_BUSINESS_LIST":
-      
-        return Object.assign({}, state, {
-          isPending: true
-        })
-      case "FETCH_BUSINESS_LIST_SUCCESS":
-      
-        return Object.assign({}, state, {
-          isPending: false,
-          businessList: action.businesses
-        })
-      
-      default:
-        return state
-    }
+  switch (action.type) {
+    case "SELECT_BUSINESS":
+          return Object.assign({}, state, { selectedBusinessIdsList: [...state.selectedBusinessIdsList, action.businessId] });
+    case "DESELECT_BUSINESS":
+          return Object.assign({}, state, { selectedBusinessIdsList: state.selectedBusinessIdsList.filter(itm => itm !== action.businessId) });
+    case "FETCH_BUSINESS_LIST":
+          return Object.assign({}, state, { isPending: true });
+    case "FETCH_BUSINESS_LIST_SUCCESS":
+          return Object.assign({}, state, { isPending: false,  businessList: action.businesses });
+    default:
+          return state
   }
+}
