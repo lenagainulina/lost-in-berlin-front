@@ -54,6 +54,7 @@ const fetchBusinessListAsync = () => (
 );
 
 export default {
+    changeLocation,
     selectBusiness,
     deselectBusiness,
     fetchBusinessListAsync
