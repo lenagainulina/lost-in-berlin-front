@@ -7,7 +7,7 @@ import Order from './Order';
 const Home = () =>
 (
     <div className="home">
-        <p> Home</p>
+        <p> Lost in &lt;Enter your city&gt;</p>
         <Route exact path="/" component={BusinessCarousel} />
         <Route path="/order" component={Order} />
     </div>

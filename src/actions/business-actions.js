@@ -1,3 +1,4 @@
+const fillCurrentOrder = orderData => ({ type: "FILL_CURRENT_ORDER", currentOrder: orderData });
 const selectBusiness = businessId => ({ type: "SELECT_BUSINESS", businessId: businessId });
 const deselectBusiness = businessId => ({ type: "DESELECT_BUSINESS", businessId: businessId });
 const fetchBusinessList = () => ({ type: "FETCH_BUSINESS_LIST" });
@@ -54,6 +55,7 @@ const fetchBusinessListAsync = () => (
 );
 
 export default {
+    fillCurrentOrder,
     selectBusiness,
     deselectBusiness,
     fetchBusinessListAsync

@@ -1,0 +1,42 @@
+.addOrder{
+  border: #222222 solid 3px;
+  border-radius: 2em;
+  background: #d1e8fd;
+  width: 50%;
+  padding: .5em;
+  color: #0c0c0c;
+  margin: 0 auto;
+}
+
+#participants{
+  width:10em;
+}
+
+.customBtn{
+  display: inline-block;
+  margin: 1em;
+  padding: .5em;
+  color:#0c0c0c
+}
+
+.customBtn:hover{
+  background: #00b3ee;
+  border-radius: .3em;
+  color: #093e4c
+}
+
+
+#cancelBtn{
+  text-decoration: none;
+}
+
+#postBtn{
+  cursor:pointer;
+}
+
+.adornment p{
+  font-size:medium !important;
+}
+.customInput{
+  height: 3.5em;
+}
