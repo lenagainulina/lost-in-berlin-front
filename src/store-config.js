@@ -1,11 +1,10 @@
-import { createStore, applyMiddleware } from 'redux'
-import reducers from './reducers'
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { router5Middleware } from 'redux-router5';
+import businessReducers from './reducers/business-reducers';
 
-function createStoreConfig(router) {
-    return createStore(reducers, applyMiddleware(thunk, router5Middleware(router)))
-    debugger;
-};
+export default createStore(businessReducers, applyMiddleware(thunk));
+/*
+const store = createStore(businessReducers, applyMiddleware(thunk));
 
-export default createStoreConfig;
+export default store;
+*/
