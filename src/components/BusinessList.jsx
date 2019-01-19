@@ -2,83 +2,54 @@ import React from 'react';
 import BusinessListItem from './BusinessListItem';
 import { connect } from 'react-redux'
 import BusinessActions from '../actions/business-actions';
-import SearchForm from './SearchForm';
 
-function renderBusinessList(businessList = [], onBusinessSelected, onBusinessDeselected) {
+function renderBusinessList(businessList = [], onBusinessSelected1) {
     return businessList.map((business) => {
         return (
-            <BusinessListItem 
-                business={business} 
-                onBusinessSelected={onBusinessSelected} 
-                onBusinessDeselected={onBusinessDeselected} 
-            />
+            <BusinessListItem business={business} onBusinessSelected={onBusinessSelected1} />
         )
     })
 }
 
 class BusinessList extends React.Component {
 
-    handleBusinessDeselection(business) {
-        this.props.deselectBusinessAction(business);
-    }
-
     handleBusinessSelection(business) {
         this.props.selectBusinessAction(business);
     }
 
-    handleChangeLocation(location){
-        this.props.changeLocation(location)
-        this.props.fetchBusinessListAction(location)
-    }
-
       componentDidMount(){
-        const location = this.props.location
-        console.log("Business list "+location);
-        this.props.fetchBusinessListAction(location);
+        this.props.fetchBusinessListAction();
       }
 
-
     render() {
-        const chosenBusinessList = this.props.chosenBusinessList ? this.props.chosenBusinessList : [];    
+        const selectedBusiness = this.props.selectedBusiness ? this.props.selectedBusiness : {};
+               
         return (
             <div>
-                <h1>Choose your guide {chosenBusinessList.business}</h1>
-                <SearchForm onLocationChange={this.handleChangeLocation.bind(this)}/>
+                <h1>Choose your guide {selectedBusiness.business}</h1>
               
-                {renderBusinessList(
-                    this.props.businesses, 
-                    this.handleBusinessSelection.bind(this),
-                    this.handleBusinessDeselection.bind(this)
-                )}
-    
+                {renderBusinessList(this.props.businesses, this.handleBusinessSelection.bind(this))}
+
+            
             </div>
         );
     }
 }
 
 const mapStateToProps = function (state) {
-    debugger;
     return {
-        chosenBusinessList: state.chosenBusinessList,
-        businesses: state.businessList,
-        location: state.location
+        selectedBusiness: state.selectedBusiness,
+        businesses: state.businessList
     }
 }
 
 const mapDispatchToProps = function (dispatch) {
-    debugger;
     return {
-        deselectBusinessAction: (business) => {
-            return dispatch(BusinessActions.deselectBusiness(business))
-        },
         selectBusinessAction: (business) => {
             return dispatch(BusinessActions.selectBusiness(business))
         },
-        fetchBusinessListAction: location => {
-            return dispatch(BusinessActions.fetchBusinessListAsync(location));
-        },
-        changeLocation: location => {
-            return dispatch(BusinessActions.changeLocation(location))
+        fetchBusinessListAction: () => {
+            return dispatch(BusinessActions.fetchBusinessListAsync());
         }
     }
 }

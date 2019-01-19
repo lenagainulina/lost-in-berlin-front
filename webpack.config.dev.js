@@ -19,6 +19,5 @@ module.exports = merge(webpackCommonConfig, {
 		proxy: {
 			'/api': 'http://localhost:9000'
 		}
-		
 	}
 });
