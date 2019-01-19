@@ -2,7 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import BusinessCard from './BusinessCard';
 import BusinessActions from '../actions/business-actions';
-import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class BusinessCarousel extends React.Component{
 
@@ -44,7 +45,7 @@ class BusinessCarousel extends React.Component{
         return (
             <div className='carousel'>
                 <Slider {...settings}>{BusinessCards}</Slider>
-                <div className='callToAction'>Los geht's!!!</div>
+                <Link to="/order" className='callToAction'>Los geht's!!!</Link>
             </div>
         )
     }
