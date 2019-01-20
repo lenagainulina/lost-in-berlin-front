@@ -121,7 +121,6 @@ class Order extends React.Component{
     }
 
     onPostOrder(){
-        console.log("Data to post: %o", JSON.stringify(this.state.formData));
         // TODO: comment for interaction with live API and fetching real data
      /*
         this.props.fillCurrentOrder(this.state.formData);
@@ -144,15 +143,12 @@ class Order extends React.Component{
             body:JSON.stringify(formData)
         })
             .then(resp => {
-                console.log ("Response1: %o", resp);
                 if(resp.status>=300) {
-                    console.log(`HTTP Error ${resp.status}: ${resp.statusText}`);
                     this.state.error = `HTTP Error ${resp.status}: ${resp.statusText}`
                 } else {
                     resp
                         .json()
                         .then(data => {
-                            console.log ("Response: %o", data)
                             this.props.fillCurrentOrder(data)
                             this.props.history.push("/orderDetails")
                             })

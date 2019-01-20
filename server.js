@@ -29,5 +29,15 @@ app.post('/api/orders', (req, res) => {
         }).catch(error => res.send(error))
 }
 );
+app.get('/api/orders/:orderNr', (req, res) => {
+    fetch(`http://localhost:8080/orders/${req.params.orderNr}`, { method: 'get' })
+        .then(response => {
+            response
+                .json()
+                .then(actualData => res.send(actualData))
+                .catch(jsonParsingError => res.send(jsonParsingError))
+        }).catch(error => res.send(error))
+}
+);
 
 app.listen(9000);
