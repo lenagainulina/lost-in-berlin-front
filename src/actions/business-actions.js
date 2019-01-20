@@ -38,19 +38,22 @@ const fetchBusinessListAsync = () => (
             }
         ];
 
-        dispatch(fetchBusinessListSuccess(fakeBusinessData))
+       // dispatch(fetchBusinessListSuccess(fakeBusinessData))
 
         // TODO: uncomment for interaction with live API and fetching real data
-        /*
+        
         fetch('api/businesses', { method: 'get' })
             .then(resp =>
                 resp
                     .json()
-                    .then(actualData => dispatch(fetchBusinessListSuccess(actualData)))
+                    .then(actualData => {
+                        console.log("Initialization: %o", actualData)
+                        dispatch(fetchBusinessListSuccess(actualData))
+                    })
                     .catch(jsonParsingError =>  dispatch(fetchBusinessListFailure(jsonParsingError)))
             ).catch(err => dispatch(fetchBusinessListFailure(error)))
 
-            */
+            
     }
 );
 

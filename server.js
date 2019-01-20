@@ -15,5 +15,19 @@ app.get('/api/businesses', (req, res) => {
             }).catch(error => res.send(error))
     }
 );
+app.post('/api/orders', (req, res) => {
+    fetch('http://localhost:8080/orders', {
+        method: 'post', 
+        headers: {'Content-Type':'application/json'},
+        body:JSON.stringify(req.body)
+    })
+        .then(response => {
+            response
+                .json()
+                .then(actualData => res.send(actualData))
+                .catch(jsonParsingError => res.send(jsonParsingError))
+        }).catch(error => res.send(error))
+}
+);
 
 app.listen(9000);
